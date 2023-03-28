@@ -9,21 +9,20 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "psr/log": "^1.1",
+        "php": "^8.0",
+        "psr/log": "^2.0|^3.0",
         "react/event-loop": "^1.1",
         "react/promise": "^2.8",
         "wyrihaximus/react-child-process-messenger": "^3 || ^4"
     },
     "require-dev": {
-        "monolog/monolog": "^2.2",
-        "wyrihaximus/async-test-utilities": "^3.4.18"
+        "monolog/monolog": "^2.2"
     },
     "config": {
-        "platform": {
-            "php": "7.4.7"
-        },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "wyrihaximus/composer-update-bin-autoload-path": true
+        }
     },
     "extra": {
         "unused": [
@@ -40,13 +39,5 @@
         "psr-4": {
             "WyriHaximus\\React\\Tests\\ChildProcess\\PSR3\\": "tests/"
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "composer normalize"
-        ],
-        "post-update-cmd": [
-            "composer normalize"
-        ]
     }
 }
