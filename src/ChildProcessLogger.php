@@ -44,6 +44,11 @@ final class ChildProcessLogger implements LoggerInterface
         });
     }
 
+    public function dispose(): PromiseInterface
+    {
+        return $this->messenger->softTerminate();
+    }
+
     /**
      * @param mixed        $level
      * @param array<mixed> $context
